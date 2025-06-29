@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-friendly-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-friendly-gray-400 text-sm">
-              © 2024 Friendly Robot. All rights reserved.
+              © {new Date().getFullYear()} Friendly Robot. All rights reserved.
             </p>
             <p className="text-friendly-gray-400 text-sm mt-2 md:mt-0">
               Making tech friendly since 2017
