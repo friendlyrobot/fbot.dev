@@ -1,5 +1,5 @@
 
-import { Code, Globe, Smartphone, Link, Lightbulb } from 'lucide-react';
+import { Code, Globe, Smartphone, Link, Lightbulb, Zap } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
@@ -27,6 +27,11 @@ const ServicesSection = () => {
       icon: Lightbulb,
       title: "Strategic Consulting",
       description: "Honest advice about what tech will actually help your business"
+    },
+    {
+      icon: Zap,
+      title: "MVP Development",
+      description: "Build high quality prototypes to test your idea with real customers"
     }
   ];
 
