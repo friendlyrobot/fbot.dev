@@ -16,13 +16,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://x.com/friendlyrobotco"
                 className="text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/friendlyrobot"
                 className="text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 <Github className="h-5 w-5" />
