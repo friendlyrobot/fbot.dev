@@ -54,6 +54,14 @@ const HeroSection = () => {
             <Button
               size="lg"
               className="bg-warm-orange-600 hover:bg-warm-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group mb-6"
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.location.hash = "#contact";
+                }
+              }}
             >
               Let's Build Something Together
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
