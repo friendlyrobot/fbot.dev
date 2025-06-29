@@ -24,7 +24,7 @@ This project is a landing page for Friendly Robot, built with Vite, React, and T
 # Workflow
 
 - Be sure to typecheck when you’re done making a series of code changes
-- Be sure to check in changes
+- Be sure to check in changes use git when you finish the task
 
 ## Project Structure
 
