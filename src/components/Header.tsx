@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -38,11 +38,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center text-friendly-gray-600">
-              <Phone className="h-4 w-4 mr-2" />
-              <span className="font-medium">(02) XXXX-XXXX</span>
-            </div>
+          <div className="hidden md:flex items-center">
             <Button className="bg-warm-orange-600 hover:bg-warm-orange-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
               Get Started
             </Button>
@@ -71,10 +67,6 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="flex items-center px-3 py-2 text-friendly-gray-600">
-                <Phone className="h-4 w-4 mr-2" />
-                <span className="font-medium">(02) XXXX-XXXX</span>
-              </div>
               <div className="px-3 py-2">
                 <Button className="w-full bg-warm-orange-600 hover:bg-warm-orange-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
                   Get Started

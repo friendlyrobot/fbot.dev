@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -33,12 +33,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone className="h-4 w-4 text-warm-orange-400 mr-3" />
-                <span className="text-friendly-gray-300">(02) XXXX-XXXX</span>
-              </div>
-              <div className="flex items-center">
                 <Mail className="h-4 w-4 text-warm-orange-400 mr-3" />
-                <span className="text-friendly-gray-300">hello@friendlyrobot.com.au</span>
+                <span className="text-friendly-gray-300">contact@fbot.dev</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 text-warm-orange-400 mr-3" />
