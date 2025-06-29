@@ -1,5 +1,4 @@
-
-import { Mail, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Twitter, Linkedin, Github, X } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,17 +11,20 @@ const Footer = () => {
               🤖 Friendly Robot
             </div>
             <p className="text-friendly-gray-300 mb-6 leading-relaxed">
-              Making tech friendly since 2017. We build software that actually makes sense 
-              for real businesses in Sydney and beyond.
+              Making tech friendly since 2017. We build software that actually
+              makes sense for real businesses in Sydney and beyond.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-friendly-gray-400 hover:text-warm-orange-400 transition-colors duration-200">
+              <a
+                href="#"
+                className="text-friendly-gray-400 hover:text-warm-orange-400 transition-colors duration-200"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-friendly-gray-400 hover:text-warm-orange-400 transition-colors duration-200">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-friendly-gray-400 hover:text-warm-orange-400 transition-colors duration-200">
+              <a
+                href="#"
+                className="text-friendly-gray-400 hover:text-warm-orange-400 transition-colors duration-200"
+              >
                 <Github className="h-5 w-5" />
               </a>
             </div>
@@ -38,7 +40,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 text-warm-orange-400 mr-3" />
-                <span className="text-friendly-gray-300">Sydney, Australia</span>
+                <span className="text-friendly-gray-300">
+                  Sydney, Australia
+                </span>
               </div>
             </div>
           </div>
@@ -47,16 +51,28 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
-              <a href="#home" className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200">
+              <a
+                href="#home"
+                className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200"
+              >
                 Home
               </a>
-              <a href="#services" className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200">
+              <a
+                href="#services"
+                className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200"
+              >
                 Services
               </a>
-              <a href="#about" className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200">
+              <a
+                href="#about"
+                className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200"
+              >
                 About
               </a>
-              <a href="#contact" className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200">
+              <a
+                href="#contact"
+                className="block text-friendly-gray-300 hover:text-warm-orange-400 transition-colors duration-200"
+              >
                 Contact
               </a>
             </div>

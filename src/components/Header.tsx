@@ -1,16 +1,15 @@
-
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -37,19 +36,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
-            <Button className="bg-warm-orange-600 hover:bg-warm-orange-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
-              Get Started
-            </Button>
-          </div>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-friendly-gray-600 hover:text-warm-orange-600 transition-colors duration-200"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -67,11 +63,6 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-warm-orange-600 hover:bg-warm-orange-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
-                  Get Started
-                </Button>
-              </div>
             </div>
           </div>
         )}
