@@ -66,12 +66,6 @@ const Footer = () => {
                 Services
               </a>
               <a
-                href="/#home"
-                className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
-              >
-                About
-              </a>
-              <a
                 href="/contact"
                 className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
