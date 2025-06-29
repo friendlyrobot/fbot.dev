@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { ArrowRight, Code, Rocket, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -11,19 +11,20 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="bg-gradient-to-br from-warm-orange-50 to-soft-amber-50 py-20 lg:py-32"
+      className="bg-brand-background py-20 lg:py-32 border-b-4 border-black"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-friendly-gray-900 mb-6 animate-fade-in">
-            Smart Software That{" "}
-            <span className="text-warm-orange-600">Actually Makes Sense</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-brand-foreground mb-6 animate-fade-in uppercase">
+            Smart Software{" "}
+            <span className="text-brand-primary">That Actually</span>{" "}
+            <span className="text-brand-secondary">Makes Sense</span>
           </h1>
 
           {/* Subheadline */}
           <p
-            className="text-xl md:text-2xl text-friendly-gray-600 mb-8 leading-relaxed animate-fade-in"
+            className="text-xl md:text-2xl text-brand-foreground mb-8 leading-relaxed animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
             We build straightforward, jargon-free software for startups, local
@@ -41,8 +42,8 @@ const HeroSection = () => {
                 key={index}
                 className="flex items-center justify-center text-left max-w-2xl mx-auto"
               >
-                <CheckCircle className="h-6 w-6 text-warm-orange-600 flex-shrink-0 mr-4" />
-                <span className="text-lg text-friendly-gray-700">
+                <Rocket className="h-6 w-6 text-brand-accent flex-shrink-0 mr-4" />
+                <span className="text-lg text-brand-foreground">
                   {benefit}
                 </span>
               </div>
@@ -53,7 +54,7 @@ const HeroSection = () => {
           <div className="animate-fade-in" style={{ animationDelay: "0.6s" }}>
             <Button
               size="lg"
-              className="bg-warm-orange-600 hover:bg-warm-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group mb-6"
+              className="bg-brand-primary hover:bg-brand-secondary text-brand-foreground px-8 py-4 text-lg font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 group mb-6"
               onClick={() => {
                 const contactSection = document.getElementById("contact");
                 if (contactSection) {
@@ -70,19 +71,19 @@ const HeroSection = () => {
 
           {/* Supporting Text */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-friendly-gray-600 animate-fade-in"
+            className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-brand-foreground animate-fade-in"
             style={{ animationDelay: "0.8s" }}
           >
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-warm-orange-600 rounded-full mr-2"></span>
+              <Code className="h-5 w-5 text-brand-accent mr-2" />
               <span className="font-medium">Free consultation</span>
             </div>
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-warm-orange-600 rounded-full mr-2"></span>
+              <Users className="h-5 w-5 text-brand-accent mr-2" />
               <span className="font-medium">Experienced tech team</span>
             </div>
             <div className="flex items-center">
-              <span className="w-2 h-2 bg-warm-orange-600 rounded-full mr-2"></span>
+              <Rocket className="h-5 w-5 text-brand-accent mr-2" />
               <span className="font-medium">
                 {new Date().getFullYear() - 2017}+ years experience
               </span>

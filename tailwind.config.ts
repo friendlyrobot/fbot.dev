@@ -1,5 +1,5 @@
 
-import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -63,48 +63,40 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Friendly Robot Brand Colors
-				'warm-orange': {
-					50: '#fef7ed',
-					100: '#fdedd3',
-					200: '#fbd7a5',
-					300: '#f8bb6d',
-					400: '#f59432',
-					500: '#f37316',
-					600: '#e4580c',
-					700: '#bd420c',
-					800: '#973512',
-					900: '#7c2d12',
-				},
-				'soft-amber': {
-					50: '#fffbeb',
-					100: '#fef3c7',
-					200: '#fde68a',
-					300: '#fcd34d',
-					400: '#fbbf24',
-					500: '#f59e0b',
-					600: '#d97706',
-					700: '#b45309',
-					800: '#92400e',
-					900: '#78350f',
-				},
-				'friendly-gray': {
-					50: '#f9fafb',
-					100: '#f3f4f6',
-					200: '#e5e7eb',
-					300: '#d1d5db',
-					400: '#9ca3af',
-					500: '#6b7280',
-					600: '#4b5563',
-					700: '#374151',
-					800: '#1f2937',
-					900: '#111827',
-				}
+				'neon-blue': '#0000FF',
+				'electric-pink': '#FF00FF',
+				'bright-green': '#00FF00',
+				'sunshine-yellow': '#FFFF00',
+				'light-beige': '#F5F5DC',
+				'off-white': '#FAFAFA',
+				'soft-gray': '#F0F0F0',
+				'deep-gray': '#1a1a1a',
+				'brand-primary': 'var(--brand-primary)',
+				'brand-secondary': 'var(--brand-secondary)',
+				'brand-accent': 'var(--brand-accent)',
+				'brand-background': 'var(--brand-background)',
+				'brand-foreground': 'var(--brand-foreground)',
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '0.5rem',
+				md: '0.25rem',
+				sm: '0.125rem',
+				DEFAULT: '0.25rem',
+			},
+			borderWidth: {
+				DEFAULT: '2px',
+				'0': '0',
+				'2': '2px',
+				'3': '3px',
+				'4': '4px',
+			},
+			boxShadow: {
+				DEFAULT: '4px 4px 0px 0px rgba(0,0,0,1)',
+				'md': '6px 6px 0px 0px rgba(0,0,0,1)',
+				'lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+				'xl': '10px 10px 0px 0px rgba(0,0,0,1)',
+				'2xl': '12px 12px 0px 0px rgba(0,0,0,1)',
+				'inner': 'inset 2px 2px 0px 0px rgba(0,0,0,1)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -152,5 +144,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

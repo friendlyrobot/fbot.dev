@@ -18,16 +18,16 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-brand-background border-b-4 border-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-friendly-gray-900 mb-8">
-            Tired of Tech That <span className="text-warm-orange-600">Doesn't Work for You?</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-foreground mb-8 uppercase">
+            Tired of Tech That <span className="text-brand-secondary">Doesn't Work for You?</span>
           </h2>
 
           {/* Description */}
-          <p className="text-xl text-friendly-gray-600 mb-16 leading-relaxed">
+          <p className="text-xl text-brand-foreground mb-16 leading-relaxed">
             You shouldn't need a computer science degree to understand your own software. 
             Most development companies hide behind jargon, overpromise results, and leave you 
             with solutions that create more problems than they solve.
@@ -41,10 +41,10 @@ const ProblemSection = () => {
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
-                  <point.icon className="h-8 w-8 text-red-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-secondary rounded-md mb-6 border-2 border-black shadow-md">
+                  <point.icon className="h-8 w-8 text-black" />
                 </div>
-                <p className="text-lg text-friendly-gray-700 leading-relaxed">
+                <p className="text-lg text-brand-foreground leading-relaxed">
                   {point.text}
                 </p>
               </div>

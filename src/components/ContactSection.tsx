@@ -4,17 +4,17 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-warm-orange-50 to-soft-amber-50"
+      className="py-20 bg-brand-background border-b-4 border-black"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-friendly-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-foreground mb-6 uppercase">
               Ready to Build Something That{" "}
-              <span className="text-warm-orange-600">Actually Works?</span>
+              <span className="text-brand-secondary">Actually Works?</span>
             </h2>
-            <p className="text-xl text-friendly-gray-600">
+            <p className="text-xl text-brand-foreground">
               Let's have an honest conversation about what you need (no sales
               pitch, we promise)
             </p>
@@ -24,29 +24,29 @@ const ContactSection = () => {
             {/* Contact Info */}
             <div className="max-w-2xl w-full flex flex-col md:flex-row gap-8">
               {/* Main Contact */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 text-center flex-1">
-                <h3 className="text-2xl font-semibold text-friendly-gray-900 mb-6">
+              <div className="bg-white border-4 border-black rounded-lg shadow-lg p-8 text-center flex-1">
+                <h3 className="text-2xl font-semibold text-brand-foreground mb-6 uppercase">
                   Get In Touch
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-warm-orange-600 mr-4" />
+                    <Mail className="h-6 w-6 text-brand-primary mr-4" />
                     <div>
-                      <div className="font-semibold text-friendly-gray-900">
+                      <div className="font-semibold text-brand-foreground">
                         Email us:
                       </div>
-                      <div className="text-friendly-gray-600">
+                      <div className="text-brand-foreground">
                         contact@fbot.dev
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-warm-orange-600 mr-4" />
+                    <MapPin className="h-6 w-6 text-brand-primary mr-4" />
                     <div>
-                      <div className="font-semibold text-friendly-gray-900">
+                      <div className="font-semibold text-brand-foreground">
                         Based in:
                       </div>
-                      <div className="text-friendly-gray-600">
+                      <div className="text-brand-foreground">
                         Sydney, Australia
                       </div>
                     </div>
@@ -55,19 +55,19 @@ const ContactSection = () => {
               </div>
 
               {/* Guarantees */}
-              <div className="bg-warm-orange-600 text-white rounded-2xl p-8 text-center flex-1">
-                <h3 className="text-xl font-semibold mb-4">Our Promise</h3>
+              <div className="bg-brand-primary text-brand-foreground border-4 border-black rounded-lg p-8 text-center flex-1 shadow-lg">
+                <h3 className="text-xl font-semibold mb-4 uppercase">Our Promise</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-brand-foreground rounded-full mr-3"></span>
                     <span>Free consultation</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-brand-foreground rounded-full mr-3"></span>
                     <span>Response within 24 hours</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-brand-foreground rounded-full mr-3"></span>
                     <span>Australian Business</span>
                   </div>
                 </div>
