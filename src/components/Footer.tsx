@@ -54,25 +54,25 @@ const Footer = () => {
             </h3>
             <div className="space-y-2">
               <a
-                href="#home"
+                href="/"
                 className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 Home
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 Services
               </a>
               <a
-                href="#home"
+                href="/#home"
                 className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 About
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 Contact
