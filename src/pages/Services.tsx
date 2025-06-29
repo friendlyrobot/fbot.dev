@@ -1,7 +1,9 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
+import { Code, Globe, Smartphone, Link as LinkIcon, Lightbulb, Zap } from 'lucide-react';
 
-import { Code, Globe, Smartphone, Link, Lightbulb, Zap } from 'lucide-react';
-
-const ServicesSection = () => {
+const ServicesPage = () => {
   const services = [
     {
       icon: Code,
@@ -19,7 +21,7 @@ const ServicesSection = () => {
       description: "Apps people actually want to use, designed for real-world problems"
     },
     {
-      icon: Link,
+      icon: LinkIcon,
       title: "System Integration",
       description: "Make your existing tools talk to each other properly"
     },
@@ -36,18 +38,17 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-brand-background border-b-4 border-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-foreground mb-4 text-center uppercase">
+    <div className="bg-brand-background text-brand-foreground min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-foreground mb-4 text-center uppercase">
             What We Actually Do
-          </h2>
+          </h1>
           <p className="text-2xl text-brand-primary font-medium mb-16 text-center">
             (In Plain English)
           </p>
 
-          {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 
@@ -67,10 +68,16 @@ const ServicesSection = () => {
               </div>
             ))}
           </div>
+          <div className="mt-12 text-center">
+            <Link to="/" className="text-brand-primary hover:underline">
+              &larr; Back to Home
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
-export default ServicesSection;
+export default ServicesPage;
