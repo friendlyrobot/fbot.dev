@@ -32,7 +32,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 uppercase">Get In Touch</h3>
+            <h3 className="text-lg font-semibold mb-4 uppercase">
+              Get In Touch
+            </h3>
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="h-4 w-4 text-brand-primary mr-3" />
@@ -40,16 +42,16 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 text-brand-primary mr-3" />
-                <span className="text-brand-foreground">
-                  Sydney, Australia
-                </span>
+                <span className="text-brand-foreground">Sydney, Australia</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 uppercase">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4 uppercase">
+              Quick Links
+            </h3>
             <div className="space-y-2">
               <a
                 href="#home"
@@ -64,7 +66,7 @@ const Footer = () => {
                 Services
               </a>
               <a
-                href="#about"
+                href="#home"
                 className="block text-brand-foreground hover:text-brand-primary transition-colors duration-200"
               >
                 About
