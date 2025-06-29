@@ -9,8 +9,22 @@ This project is a landing page for Friendly Robot, built with Vite, React, and T
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS with shadcn/ui components
 - **Routing**: React Router DOM
-- **State Management**: @tanstack/react-query
-- **Forms**: react-hook-form with Zod for validation
+
+## Bash commands
+
+- npm run build: Build the project
+- npm run typecheck: Run the typechecker
+- npm run lint: Run eslint
+
+# Code style
+
+- Use ES modules (import/export) syntax, not CommonJS (require)
+- Destructure imports when possible (eg. import { foo } from 'bar')
+
+# Workflow
+
+- Be sure to typecheck when you’re done making a series of code changes
+- Be sure to check in changes
 
 ## Project Structure
 
@@ -27,6 +41,7 @@ This project is a landing page for Friendly Robot, built with Vite, React, and T
 - `npm run dev`: Starts the development server.
 - `npm run build`: Builds the application for production.
 - `npm run lint`: Lints the codebase.
+- `npm run typecheck`: type check
 - `npm run preview`: Serves the production build locally.
 
 ## Customization
