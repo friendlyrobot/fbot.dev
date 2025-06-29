@@ -1,19 +1,19 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import { Mail, MapPin } from "lucide-react";
 
-const ContactSection = () => {
+const ContactPage = () => {
   return (
-    <section
-      id="contact"
-      className="py-20 bg-brand-background border-b-4 border-black"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Title */}
+    <div className="bg-brand-background text-brand-foreground min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-foreground mb-6 uppercase">
+            <h1 className="text-4xl md:text-5xl font-bold text-brand-foreground mb-6 uppercase">
               Ready to Build Something That{" "}
               <span className="text-brand-secondary">Actually Works?</span>
-            </h2>
+            </h1>
             <p className="text-xl text-brand-foreground">
               Let's have an honest conversation about what you need (no sales
               pitch, we promise)
@@ -21,9 +21,7 @@ const ContactSection = () => {
           </div>
 
           <div className="flex justify-center">
-            {/* Contact Info */}
             <div className="max-w-2xl w-full flex flex-col md:flex-row gap-8">
-              {/* Main Contact */}
               <div className="bg-white border-4 border-black rounded-lg shadow-lg p-8 text-center flex-1">
                 <h3 className="text-2xl font-semibold text-brand-foreground mb-6 uppercase">
                   Get In Touch
@@ -54,7 +52,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Guarantees */}
               <div className="bg-brand-primary text-brand-foreground border-4 border-black rounded-lg p-8 text-center flex-1 shadow-lg">
                 <h3 className="text-xl font-semibold mb-4 uppercase">Our Promise</h3>
                 <div className="space-y-3">
@@ -74,10 +71,16 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
+          <div className="mt-12 text-center">
+            <Link to="/" className="text-brand-primary hover:underline">
+              &larr; Back to Home
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
-export default ContactSection;
+export default ContactPage;
