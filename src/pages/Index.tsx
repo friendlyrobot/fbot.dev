@@ -1,12 +1,76 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import ProblemSection from '@/components/ProblemSection';
+import ApproachSection from '@/components/ApproachSection';
+import ServicesSection from '@/components/ServicesSection';
+import SocialProofSection from '@/components/SocialProofSection';
+import ProcessSection from '@/components/ProcessSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Smooth scrolling for anchor links
+    const handleSmoothScroll = (e: Event) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.hash) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    // Add event listeners for smooth scrolling
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll);
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-in-left');
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Cleanup
+    return () => {
+      links.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll);
+      });
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <HeroSection />
+      <ProblemSection />
+      <ApproachSection />
+      <ServicesSection />
+      <SocialProofSection />
+      <ProcessSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
