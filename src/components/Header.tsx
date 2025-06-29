@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -13,7 +24,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-brand-background border-b-4 border-black sticky top-0 z-50">
+    <header
+      className={`bg-brand-background border-b-4 border-black sticky top-0 z-50 transition-shadow duration-300 ${
+        isScrolled ? "shadow-lg" : ""
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
