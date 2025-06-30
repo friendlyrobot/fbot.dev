@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import Header from "@/components/Header";
+import PageLayout from "@/components/PageLayout";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import ApproachSection from "@/components/ApproachSection";
 import ProcessSection from "@/components/ProcessSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
@@ -35,14 +34,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <PageLayout>
       <HeroSection />
       <ProblemSection />
       <ApproachSection />
       <ProcessSection />
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 
