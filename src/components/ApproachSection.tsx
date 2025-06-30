@@ -1,5 +1,6 @@
 
 import { Heart, Users, Award } from 'lucide-react';
+import { NeobrutalismBox } from '@/components/ui/neobrutalism-box';
 
 const ApproachSection = () => {
   return (
@@ -12,7 +13,7 @@ const ApproachSection = () => {
           </h2>
 
           {/* Main Content */}
-          <div className="bg-white border-4 border-black rounded-lg shadow-lg p-8 lg:p-12">
+          <NeobrutalismBox variant="white" className="p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Text Content */}
               <div>
@@ -66,7 +67,7 @@ const ApproachSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </NeobrutalismBox>
         </div>
       </div>
     </section>

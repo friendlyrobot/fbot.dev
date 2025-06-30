@@ -1,5 +1,6 @@
 
 import { Coffee, ClipboardList, Hammer, Rocket } from 'lucide-react';
+import { NeobrutalismBox } from '@/components/ui/neobrutalism-box';
 
 const ProcessSection = () => {
   const steps = [
@@ -41,9 +42,10 @@ const ProcessSection = () => {
           {/* Process Steps */}
           <div className="grid lg:grid-cols-2 gap-8">
             {steps.map((step, index) => (
-              <div 
+              <NeobrutalismBox
                 key={index}
-                className="relative bg-white border-4 border-black rounded-lg p-8 animate-fade-in shadow-lg"
+                variant="white"
+                className="relative animate-fade-in p-8"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Step Number */}
@@ -66,7 +68,7 @@ const ProcessSection = () => {
                 <p className="text-brand-foreground leading-relaxed">
                   {step.details}
                 </p>
-              </div>
+              </NeobrutalismBox>
             ))}
           </div>
         </div>

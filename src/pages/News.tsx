@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import { Link } from "react-router-dom";
+import { NeobrutalismBox } from "@/components/ui/neobrutalism-box";
 
 const News = () => {
   return (
@@ -9,7 +10,7 @@ const News = () => {
           Company News
         </h1>
         <div className="space-y-8">
-          <div className="bg-brand-secondary p-6 rounded-lg shadow-md border-4 border-black">
+          <NeobrutalismBox variant="secondary" className="p-6">
             <h2 className="text-2xl font-bold text-brand-primary mb-2">
               New Home, Same Mission: Welcome to fbot.dev!
             </h2>
@@ -37,8 +38,8 @@ const News = () => {
               security features on our new platform. Thank you for being part of
               our journey!
             </p>
-          </div>
-          <div className="bg-brand-secondary p-6 rounded-lg shadow-md border-4 border-black">
+          </NeobrutalismBox>
+          <NeobrutalismBox variant="secondary" className="p-6">
             <h2 className="text-2xl font-bold text-brand-primary mb-2">
               A New Beginning!
             </h2>
@@ -54,7 +55,7 @@ const News = () => {
               to our users. The road ahead is exciting, and we can't wait to
               share our passion for innovation with the world.
             </p>
-          </div>
+          </NeobrutalismBox>
         </div>
         <div className="mt-12 text-center">
           <Link to="/" className="text-brand-primary hover:underline">

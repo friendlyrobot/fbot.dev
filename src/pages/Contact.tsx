@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import { Link } from "react-router-dom";
+import { NeobrutalismBox } from "@/components/ui/neobrutalism-box";
 import { Mail, MapPin } from "lucide-react";
 
 const ContactPage = () => {
@@ -19,7 +20,7 @@ const ContactPage = () => {
 
         <div className="flex justify-center">
           <div className="max-w-2xl w-full flex flex-col md:flex-row gap-8">
-            <div className="bg-white border-4 border-black rounded-lg shadow-lg p-8 text-center flex-1">
+            <NeobrutalismBox variant="white" className="p-8 text-center flex-1">
               <h3 className="text-2xl font-semibold text-brand-foreground mb-6 uppercase">
                 Get In Touch
               </h3>
@@ -47,9 +48,9 @@ const ContactPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </NeobrutalismBox>
 
-            <div className="bg-brand-primary text-brand-foreground border-4 border-black rounded-lg p-8 text-center flex-1 shadow-lg">
+            <NeobrutalismBox variant="primary" className="text-brand-foreground p-8 text-center flex-1">
               <h3 className="text-xl font-semibold mb-4 uppercase">
                 Our Promise
               </h3>
@@ -67,7 +68,7 @@ const ContactPage = () => {
                   <span>Australian Business</span>
                 </div>
               </div>
-            </div>
+            </NeobrutalismBox>
           </div>
         </div>
         <div className="mt-12 text-center">

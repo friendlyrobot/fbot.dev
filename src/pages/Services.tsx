@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import { Link } from "react-router-dom";
+import { NeobrutalismBox } from "@/components/ui/neobrutalism-box";
 import {
   Code,
   Globe,
@@ -60,9 +61,10 @@ const ServicesPage = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <NeobrutalismBox
               key={index}
-              className="bg-white border-4 border-black rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in group"
+              variant="white"
+              className="p-6 hover:shadow-xl transition-all duration-300 animate-fade-in group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-12 h-12 bg-brand-accent rounded-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -74,7 +76,7 @@ const ServicesPage = () => {
               <p className="text-brand-foreground leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </NeobrutalismBox>
           ))}
         </div>
         <div className="mt-12 text-center">
