@@ -9,7 +9,7 @@ const News = () => {
           Company News
         </h1>
         <div className="space-y-8">
-          <div className="bg-brand-secondary p-6 rounded-lg shadow-md">
+          <div className="bg-brand-secondary p-6 rounded-lg shadow-md border-4 border-black">
             <h2 className="text-2xl font-bold text-brand-primary mb-2">
               New Home, Same Mission: Welcome to fbot.dev!
             </h2>
@@ -38,7 +38,7 @@ const News = () => {
               our journey!
             </p>
           </div>
-          <div className="bg-brand-secondary p-6 rounded-lg shadow-md">
+          <div className="bg-brand-secondary p-6 rounded-lg shadow-md border-4 border-black">
             <h2 className="text-2xl font-bold text-brand-primary mb-2">
               A New Beginning!
             </h2>
