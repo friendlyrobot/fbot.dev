@@ -1,4 +1,4 @@
-import { PageLayout } from "@/components/PageLayout";
+import PageLayout from "@/components/PageLayout";
 
 export const BloodhawkPrivacyPolicy = () => {
   return (
@@ -57,8 +57,8 @@ export const BloodhawkPrivacyPolicy = () => {
           <li>
             <strong>Usage Data:</strong> We collect information about your usage
             of the app, such as the number of uploads you perform. This data is
-            associated with your anonymous user ID and helps us manage our
--            service and enforce usage limits. This includes:
+            associated with your anonymous user ID and helps us manage our -
+            service and enforce usage limits. This includes:
             <ul>
               <li>Daily and monthly upload counts.</li>
               <li>The date of your last daily and monthly usage reset.</li>
@@ -153,8 +153,8 @@ export const BloodhawkPrivacyPolicy = () => {
         <ul>
           <li>
             <strong>Clearing Data:</strong> You can clear all your stored blood
-            test data from your device at any time from the "Profile &
-            Settings" screen in the app.
+            test data from your device at any time from the "Profile & Settings"
+            screen in the app.
           </li>
           <li>
             <strong>Analytics:</strong> While we do not offer an opt-out for
