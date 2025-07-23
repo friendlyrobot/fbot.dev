@@ -8,6 +8,7 @@ import News from "./pages/News";
 import ServicesPage from "./pages/Services";
 import ContactPage from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { BloodhawkPrivacyPolicy } from "./pages/BloodhawkPrivacyPolicy";
 import "./App.css";
 
 const App = () => (
@@ -20,6 +21,10 @@ const App = () => (
         <Route path="/news" element={<News />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route
+          path="/bloodhawk/privacy-policy"
+          element={<BloodhawkPrivacyPolicy />}
+        />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
