@@ -10,6 +10,7 @@ import ContactPage from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { BloodhawkPrivacyPolicy } from "./pages/BloodhawkPrivacyPolicy";
 import { XWriterPrivacyPolicy } from "./pages/XWriterPrivacyPolicy";
+import { XWriter } from "./pages/XWriter";
 import "./App.css";
 
 const App = () => (
@@ -22,13 +23,14 @@ const App = () => (
         <Route path="/news" element={<News />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/products/xwriter" element={<XWriter />} />
+        <Route
+          path="/products/xwriter/privacy-policy"
+          element={<XWriterPrivacyPolicy />}
+        />
         <Route
           path="/bloodhawk/privacy-policy"
           element={<BloodhawkPrivacyPolicy />}
-        />
-        <Route
-          path="/xwriter/privacy-policy"
-          element={<XWriterPrivacyPolicy />}
         />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
