@@ -61,7 +61,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-brand-background border-b-4 border-black sticky top-0 z-50 transition-shadow duration-300 ${
+      className={`bg-brand-background/95 backdrop-blur-md border-b-4 border-black sticky top-0 z-50 transition-shadow duration-300 ${
         isScrolled ? "shadow-lg" : ""
       }`}
     >
@@ -191,30 +191,31 @@ const Header = () => {
                         <div className="w-8 h-8 bg-brand-accent rounded-md flex items-center justify-center">
                           <product.icon className="h-4 w-4 text-black" />
                         </div>
-                         <div className="flex-1">
-                           <h3 className="text-base font-semibold text-brand-foreground mb-1 uppercase">
-                             {product.name}
-                           </h3>
-                           <p className="text-xs text-brand-foreground mb-2 leading-relaxed">
-                             {product.description}
-                           </p>
-                           <div className="flex flex-col space-y-1">
-                             <Link
-                               to={product.productLink}
-                               className="text-xs text-brand-primary hover:underline font-medium"
-                               onClick={() => setIsMenuOpen(false)}
-                             >
-                               Learn More →
-                             </Link>
-                             <Link
-                               to={product.privacyLink}
-                               className="text-xs text-brand-primary hover:underline font-medium"
-                               onClick={() => setIsMenuOpen(false)}
-                             >
-                               Privacy Policy →
-                             </Link>
-                           </div>
-                         </div>                      </div>
+                        <div className="flex-1">
+                          <h3 className="text-base font-semibold text-brand-foreground mb-1 uppercase">
+                            {product.name}
+                          </h3>
+                          <p className="text-xs text-brand-foreground mb-2 leading-relaxed">
+                            {product.description}
+                          </p>
+                          <div className="flex flex-col space-y-1">
+                            <Link
+                              to={product.productLink}
+                              className="text-xs text-brand-primary hover:underline font-medium"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Learn More →
+                            </Link>
+                            <Link
+                              to={product.privacyLink}
+                              className="text-xs text-brand-primary hover:underline font-medium"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Privacy Policy →
+                            </Link>
+                          </div>
+                        </div>{" "}
+                      </div>
                     </NeobrutalismBox>
                   ))}
                 </div>
