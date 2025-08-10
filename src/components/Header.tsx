@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +21,7 @@ const Header = () => {
     { name: "Services", href: "/services" },
     { name: "News", href: "/news" },
     { name: "Contact", href: "/contact" },
+    { name: "XWriter", href: "/products/xwriter" },
   ];
 
   return (

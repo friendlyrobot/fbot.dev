@@ -1,6 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 
-export const BloodhawkPrivacyPolicy = () => {
+const BloodhawkPrivacyPolicy = () => {
   return (
     <PageLayout>
       <div className="bg-white dark:bg-gray-900">
@@ -209,3 +209,5 @@ export const BloodhawkPrivacyPolicy = () => {
     </PageLayout>
   );
 };
+
+export default BloodhawkPrivacyPolicy;

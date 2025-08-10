@@ -1,6 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 
-export const XWriter = () => {
+const XWriter = () => {
   return (
     <PageLayout>
       <div className="bg-white dark:bg-gray-900">
@@ -159,3 +159,5 @@ export const XWriter = () => {
     </PageLayout>
   );
 };
+
+export default XWriter;

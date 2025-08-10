@@ -1,6 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 
-export const XWriterPrivacyPolicy = () => {
+const XWriterPrivacyPolicy = () => {
   return (
     <PageLayout>
       <div className="bg-white dark:bg-gray-900">
@@ -328,3 +328,5 @@ export const XWriterPrivacyPolicy = () => {
     </PageLayout>
   );
 };
+
+export default XWriterPrivacyPolicy;
