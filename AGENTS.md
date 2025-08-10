@@ -14,18 +14,11 @@ This project is a landing page for Friendly Robot, built with Vite, React, and T
 
 - npm run build: Build the project
 - npm run typecheck: Run the typechecker
-- npm run lint: Run eslint
 
 # Code style
 
 - Use ES modules (import/export) syntax, not CommonJS (require)
 - Destructure imports when possible (eg. import { foo } from 'bar')
-
-# Workflow
-
-- Be sure to typecheck when you’re done making a series of code changes
-- Be sure to check in changes use git when you finish the task
-- Commit changes when the task is complete
 
 ## Project Structure
 
@@ -41,7 +34,6 @@ This project is a landing page for Friendly Robot, built with Vite, React, and T
 
 - `npm run dev`: Starts the development server.
 - `npm run build`: Builds the application for production.
-- `npm run lint`: Lints the codebase.
 - `npm run typecheck`: type check
 - `npm run preview`: Serves the production build locally.
 

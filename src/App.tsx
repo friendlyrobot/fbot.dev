@@ -12,8 +12,12 @@ const News = React.lazy(() => import("./pages/News"));
 const ServicesPage = React.lazy(() => import("./pages/Services"));
 const ContactPage = React.lazy(() => import("./pages/Contact"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
-const BloodhawkPrivacyPolicy = React.lazy(() => import("./pages/BloodhawkPrivacyPolicy"));
-const XWriterPrivacyPolicy = React.lazy(() => import("./pages/XWriterPrivacyPolicy"));
+const BloodhawkPrivacyPolicy = React.lazy(
+  () => import("./pages/BloodhawkPrivacyPolicy"),
+);
+const XWriterPrivacyPolicy = React.lazy(
+  () => import("./pages/XWriterPrivacyPolicy"),
+);
 const XWriter = React.lazy(() => import("./pages/XWriter"));
 
 // Loading component for suspense
@@ -36,12 +40,12 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/products/xwriter" element={<XWriter />} />
           <Route
-            path="/bloodhawk/privacy-policy"
-            element={<BloodhawkPrivacyPolicy />}
+            path="/products/xwriter/privacy-policy"
+            element={<XWriterPrivacyPolicy />}
           />
           <Route
-            path="/xwriter/privacy-policy"
-            element={<XWriterPrivacyPolicy />}
+            path="/bloodhawk/privacy-policy"
+            element={<BloodhawkPrivacyPolicy />}
           />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
