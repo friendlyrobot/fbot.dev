@@ -10,7 +10,7 @@ const NeobrutalismBox = React.forwardRef<HTMLDivElement, NeobrutalismBoxProps>(
     const variants = {
       default: "bg-white",
       primary: "bg-brand-primary",
-      secondary: "bg-brand-secondary", 
+      secondary: "bg-brand-secondary",
       accent: "bg-brand-accent",
       white: "bg-white"
     }
@@ -19,7 +19,7 @@ const NeobrutalismBox = React.forwardRef<HTMLDivElement, NeobrutalismBoxProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-lg border-4 border-black shadow-lg",
+          "rounded-lg border-2 border-black shadow-lg",
           variants[variant],
           className
         )}

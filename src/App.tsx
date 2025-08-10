@@ -44,6 +44,10 @@ const App = () => (
             element={<XWriterPrivacyPolicy />}
           />
           <Route
+            path="/products/bloodhawk/privacy-policy"
+            element={<BloodhawkPrivacyPolicy />}
+          />
+          <Route
             path="/bloodhawk/privacy-policy"
             element={<BloodhawkPrivacyPolicy />}
           />
