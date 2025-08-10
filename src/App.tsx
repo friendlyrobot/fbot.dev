@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 // import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ErrorBoundary from "@/components/error-boundary";
 import "./App.css";
 
 // Lazy load page components
@@ -29,12 +30,13 @@ const LoadingSpinner = () => (
 );
 
 const App = () => (
-  <TooltipProvider>
-    <Toaster />
-    <Sonner />
-    <Router>
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
+  <ErrorBoundary>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <Router>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/news" element={<News />} />
           <Route path="/services" element={<ServicesPage />} />
@@ -55,10 +57,11 @@ const App = () => (
           />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </Router>
-  </TooltipProvider>
+          </Routes>
+        </Suspense>
+      </Router>
+    </TooltipProvider>
+  </ErrorBoundary>
 );
 
 export default App;

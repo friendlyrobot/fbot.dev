@@ -1,12 +1,28 @@
 import { ArrowRight, Code, Rocket, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCallback, useMemo, memo } from "react";
 
-const HeroSection = () => {
-  const benefits = [
-    "No intimidating tech-speak or endless buzzwords",
-    "Honest advice and clear communication every step",
-    "Built for real people solving real problems",
-  ];
+const HeroSection = memo(() => {
+  const benefits = useMemo(
+    () => [
+      "No intimidating tech-speak or endless buzzwords",
+      "Honest advice and clear communication every step",
+      "Built for real people solving real problems",
+    ],
+    [],
+  );
+
+  const scrollToContact = useCallback(() => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.hash = "#contact";
+    }
+  }, []);
+
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
+  const experienceYears = useMemo(() => currentYear - 2017, [currentYear]);
 
   return (
     <section
@@ -43,9 +59,7 @@ const HeroSection = () => {
                 className="flex items-center justify-center text-left max-w-2xl mx-auto"
               >
                 <Rocket className="h-6 w-6 text-brand-accent flex-shrink-0 mr-4" />
-                <span className="text-lg text-brand-foreground">
-                  {benefit}
-                </span>
+                <span className="text-lg text-brand-foreground">{benefit}</span>
               </div>
             ))}
           </div>
@@ -55,14 +69,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               className="bg-brand-primary hover:bg-brand-secondary text-brand-foreground px-8 py-4 text-lg font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 group mb-6"
-              onClick={() => {
-                const contactSection = document.getElementById("contact");
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  window.location.hash = "#contact";
-                }
-              }}
+              onClick={scrollToContact}
             >
               Let's Build Something Together
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -85,7 +92,7 @@ const HeroSection = () => {
             <div className="flex items-center">
               <Rocket className="h-5 w-5 text-brand-accent mr-2" />
               <span className="font-medium">
-                {new Date().getFullYear() - 2017}+ years experience
+                {experienceYears}+ years experience
               </span>
             </div>
           </div>
@@ -93,6 +100,8 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+});
+
+HeroSection.displayName = "HeroSection";
 
 export default HeroSection;

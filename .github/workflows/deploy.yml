@@ -1,60 +1,59 @@
 name: Deploy to GitHub Pages
 
 on:
-    push:
-        branches: [main] # or master, depending on your default branch
-    workflow_dispatch: # Allow manual trigger
+  push:
+    branches: [main] # or master, depending on your default branch
+  workflow_dispatch: # Allow manual trigger
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+  contents: read
+  pages: write
+  id-token: write
 
 # Allow only one concurrent deployment
 concurrency:
-    group: "pages"
-    cancel-in-progress: false
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-    deploy:
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-            - name: Cache node modules
-              uses: actions/cache@v4
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
+      - name: Cache bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
-            - name: Install dependencies
-              run: npm ci
+      - name: Install dependencies
+        run: bun install
 
-            - name: Build project
-              run: |
-                  npm run build
+      - name: Build project
+        run: bun run build
 
-            - name: Setup Pages
-              uses: actions/configure-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  # Upload entire repository
-                  path: "./dist" # Change this to your folder path
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: "./dist" # Change this to your folder path
 
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

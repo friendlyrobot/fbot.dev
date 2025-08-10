@@ -1,69 +1,80 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useMemo, useCallback, memo } from "react";
 import { Menu, X, ChevronDown, FileText, Edit3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NeobrutalismBox } from "@/components/ui/neobrutalism-box";
+import { useScroll } from "@/hooks/use-scroll";
+import { useClickOutside } from "@/hooks/use-click-outside";
 
-const Header = () => {
+const Header = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const productsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+  const { isScrolled } = useScroll();
+
+  const closeProducts = useCallback(() => {
+    setIsProductsOpen(false);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        productsRef.current &&
-        !productsRef.current.contains(event.target as Node)
-      ) {
-        setIsProductsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prev) => !prev);
   }, []);
 
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "News", href: "/news" },
-    { name: "Contact", href: "/contact" },
-  ];
+  const toggleProducts = useCallback(() => {
+    setIsProductsOpen((prev) => !prev);
+  }, []);
 
-  const products = [
-    {
-      name: "BloodHawk",
-      description: "AI-powered blood test analysis for better health insights",
-      icon: FileText,
-      productLink: "/products/bloodhawk",
-      privacyLink: "/products/bloodhawk/privacy-policy",
-    },
-    {
-      name: "XWriter",
-      description: "AI-powered content generation for X (Twitter) posts",
-      icon: Edit3,
-      productLink: "/products/xwriter",
-      privacyLink: "/products/xwriter/privacy-policy",
-    },
-  ];
+  const handleKeyDown = useCallback((event: React.KeyboardEvent) => {
+    if (event.key === "Escape") {
+      setIsProductsOpen(false);
+      setIsMenuOpen(false);
+    }
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
+
+  useClickOutside(productsRef, closeProducts);
+
+  const navItems = useMemo(
+    () => [
+      { name: "Home", href: "/" },
+      { name: "Services", href: "/services" },
+      { name: "News", href: "/news" },
+      { name: "Contact", href: "/contact" },
+    ],
+    [],
+  );
+
+  const products = useMemo(
+    () => [
+      {
+        name: "BloodHawk",
+        description:
+          "AI-powered blood test analysis for better health insights",
+        icon: FileText,
+        productLink: "/products/bloodhawk",
+        privacyLink: "/products/bloodhawk/privacy-policy",
+      },
+      {
+        name: "XWriter",
+        description: "AI-powered content generation for X (Twitter) posts",
+        icon: Edit3,
+        productLink: "/products/xwriter",
+        privacyLink: "/products/xwriter/privacy-policy",
+      },
+    ],
+    [],
+  );
 
   return (
     <header
       className={`bg-brand-background/95 backdrop-blur-md border-b-4 border-black sticky top-0 z-50 transition-shadow duration-300 ${
         isScrolled ? "shadow-lg" : ""
       }`}
+      role="banner"
+      onKeyDown={handleKeyDown}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -75,7 +86,11 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav
+            className="hidden md:flex items-center space-x-8"
+            role="navigation"
+            aria-label="Main navigation"
+          >
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -89,8 +104,11 @@ const Header = () => {
             {/* Products Dropdown */}
             <div className="relative" ref={productsRef}>
               <button
-                onClick={() => setIsProductsOpen(!isProductsOpen)}
+                onClick={toggleProducts}
                 className="flex items-center text-lg font-bold text-brand-foreground hover:text-brand-primary transition-colors duration-200"
+                aria-expanded={isProductsOpen}
+                aria-haspopup="true"
+                aria-label="Products menu"
               >
                 Products
                 <ChevronDown
@@ -99,7 +117,11 @@ const Header = () => {
               </button>
 
               {isProductsOpen && (
-                <div className="absolute top-full right-0 mt-2 w-96 z-50">
+                <div
+                  className="absolute top-full right-0 mt-2 w-96 z-50"
+                  role="menu"
+                  aria-label="Products menu"
+                >
                   <NeobrutalismBox variant="white" className="p-4 shadow-xl">
                     <div className="grid gap-4">
                       {products.map((product) => (
@@ -123,14 +145,14 @@ const Header = () => {
                                   <Link
                                     to={product.productLink}
                                     className="text-sm text-brand-primary hover:underline font-medium"
-                                    onClick={() => setIsProductsOpen(false)}
+                                    onClick={closeProducts}
                                   >
                                     Learn More →
                                   </Link>
                                   <Link
                                     to={product.privacyLink}
                                     className="text-sm text-brand-primary hover:underline font-medium"
-                                    onClick={() => setIsProductsOpen(false)}
+                                    onClick={closeProducts}
                                   >
                                     Privacy Policy →
                                   </Link>
@@ -149,8 +171,10 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={toggleMenu}
             className="md:hidden text-brand-foreground hover:text-brand-primary transition-colors duration-200"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle mobile menu"
           >
             {isMenuOpen ? (
               <X className="h-8 w-8" />
@@ -162,14 +186,18 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-brand-background border-t-4 border-black">
+          <div
+            className="md:hidden bg-brand-background border-t-4 border-black"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className="block px-3 py-2 rounded-md text-lg font-bold text-brand-foreground hover:text-brand-primary hover:bg-brand-secondary"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMenu}
                 >
                   {item.name}
                 </Link>
@@ -202,14 +230,14 @@ const Header = () => {
                             <Link
                               to={product.productLink}
                               className="text-xs text-brand-primary hover:underline font-medium"
-                              onClick={() => setIsMenuOpen(false)}
+                              onClick={closeMenu}
                             >
                               Learn More →
                             </Link>
                             <Link
                               to={product.privacyLink}
                               className="text-xs text-brand-primary hover:underline font-medium"
-                              onClick={() => setIsMenuOpen(false)}
+                              onClick={closeMenu}
                             >
                               Privacy Policy →
                             </Link>
@@ -226,6 +254,8 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
+
+Header.displayName = "Header";
 
 export default Header;
