@@ -39,6 +39,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "News", href: "/news" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const products = [
@@ -46,12 +47,14 @@ const Header = () => {
       name: "BloodHawk",
       description: "AI-powered blood test analysis for better health insights",
       icon: FileText,
+      productLink: "/products/bloodhawk",
       privacyLink: "/products/bloodhawk/privacy-policy",
     },
     {
       name: "XWriter",
       description: "AI-powered content generation for X (Twitter) posts",
       icon: Edit3,
+      productLink: "/products/xwriter",
       privacyLink: "/products/xwriter/privacy-policy",
     },
   ];
@@ -116,13 +119,22 @@ const Header = () => {
                                 <p className="text-sm text-brand-foreground mb-3 leading-relaxed">
                                   {product.description}
                                 </p>
-                                <Link
-                                  to={product.privacyLink}
-                                  className="text-sm text-brand-primary hover:underline font-medium"
-                                  onClick={() => setIsProductsOpen(false)}
-                                >
-                                  Privacy Policy →
-                                </Link>
+                                <div className="flex flex-col space-y-1">
+                                  <Link
+                                    to={product.productLink}
+                                    className="text-sm text-brand-primary hover:underline font-medium"
+                                    onClick={() => setIsProductsOpen(false)}
+                                  >
+                                    Learn More →
+                                  </Link>
+                                  <Link
+                                    to={product.privacyLink}
+                                    className="text-sm text-brand-primary hover:underline font-medium"
+                                    onClick={() => setIsProductsOpen(false)}
+                                  >
+                                    Privacy Policy →
+                                  </Link>
+                                </div>
                               </div>
                             </div>
                           </NeobrutalismBox>
@@ -179,22 +191,30 @@ const Header = () => {
                         <div className="w-8 h-8 bg-brand-accent rounded-md flex items-center justify-center">
                           <product.icon className="h-4 w-4 text-black" />
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-base font-semibold text-brand-foreground mb-1 uppercase">
-                            {product.name}
-                          </h3>
-                          <p className="text-xs text-brand-foreground mb-2 leading-relaxed">
-                            {product.description}
-                          </p>
-                          <Link
-                            to={product.privacyLink}
-                            className="text-xs text-brand-primary hover:underline font-medium"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            Privacy Policy →
-                          </Link>
-                        </div>
-                      </div>
+                         <div className="flex-1">
+                           <h3 className="text-base font-semibold text-brand-foreground mb-1 uppercase">
+                             {product.name}
+                           </h3>
+                           <p className="text-xs text-brand-foreground mb-2 leading-relaxed">
+                             {product.description}
+                           </p>
+                           <div className="flex flex-col space-y-1">
+                             <Link
+                               to={product.productLink}
+                               className="text-xs text-brand-primary hover:underline font-medium"
+                               onClick={() => setIsMenuOpen(false)}
+                             >
+                               Learn More →
+                             </Link>
+                             <Link
+                               to={product.privacyLink}
+                               className="text-xs text-brand-primary hover:underline font-medium"
+                               onClick={() => setIsMenuOpen(false)}
+                             >
+                               Privacy Policy →
+                             </Link>
+                           </div>
+                         </div>                      </div>
                     </NeobrutalismBox>
                   ))}
                 </div>

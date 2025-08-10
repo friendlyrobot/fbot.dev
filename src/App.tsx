@@ -19,6 +19,7 @@ const XWriterPrivacyPolicy = React.lazy(
   () => import("./pages/XWriterPrivacyPolicy"),
 );
 const XWriter = React.lazy(() => import("./pages/XWriter"));
+const BloodHawk = React.lazy(() => import("./pages/BloodHawk"));
 
 // Loading component for suspense
 const LoadingSpinner = () => (
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/products/xwriter" element={<XWriter />} />
+          <Route path="/products/bloodhawk" element={<BloodHawk />} />
           <Route
             path="/products/xwriter/privacy-policy"
             element={<XWriterPrivacyPolicy />}
