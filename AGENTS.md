@@ -2,6 +2,12 @@
 
 This project is a landing page for Friendly Robot, built with Vite, React, and TypeScript.
 
+## Follow these guidelines:
+
+- When new page added, regenerate the sitemap
+- when a new product is added, update the `products` variable in `src/components/Header.tsx`
+- when files are edited, run `prettier --write {{edited_file}}` to format the code
+
 ## Tech Stack
 
 - **Framework**: React
