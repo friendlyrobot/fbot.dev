@@ -30,20 +30,10 @@ export default defineConfig(({ mode }) => ({
         }
       },
     },
-    // Sitemap generation plugin
+    // Sitemap generation plugin - automatically extracts routes from App.tsx
     sitemapPlugin({
       baseUrl: "https://fbot.dev",
-      routes: [
-        "/",
-        "/news",
-        "/services",
-        "/contact",
-        "/products/xwriter",
-        "/products/bloodhawk",
-        "/products/xwriter/privacy-policy",
-        "/products/bloodhawk/privacy-policy",
-        "/bloodhawk/privacy-policy",
-      ],
+      // routeFile: "src/App.tsx" // default, can be customized
     }),
   ].filter(Boolean),
   resolve: {
