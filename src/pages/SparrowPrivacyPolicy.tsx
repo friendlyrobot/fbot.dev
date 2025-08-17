@@ -37,6 +37,178 @@ const SparrowPrivacyPolicy = () => {
             </li>
           </ul>
 
+          <h3 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+            Automatically Collected Data
+          </h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Usage Analytics</strong>: We collect anonymous usage data
+              through Firebase Analytics to understand how our app is used,
+              including:
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>Screen views and navigation patterns</li>
+                <li>Feature usage (calculator interactions, button taps)</li>
+                <li>App performance metrics</li>
+                <li>Crash reports for debugging purposes</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+            Data We Do NOT Collect
+          </h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              Personal identifying information (name, email, phone number)
+            </li>
+            <li>Location data</li>
+            <li>Contact information</li>
+            <li>Financial account details</li>
+            <li>Social media profiles</li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            How We Use Your Information
+          </h2>
+
+          <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
+            Local Data Storage
+          </h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              All calculator inputs and settings are stored locally on your
+              device using iOS AppStorage
+            </li>
+            <li>
+              This data never leaves your device and is not transmitted to our
+              servers
+            </li>
+            <li>You can reset all stored data through the Settings tab</li>
+          </ul>
+
+          <h3 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+            Analytics Usage
+          </h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>Anonymous usage data helps us improve app functionality</li>
+            <li>
+              We analyze user interaction patterns to enhance user experience
+            </li>
+            <li>Performance data helps us identify and fix bugs</li>
+            <li>No personal identification is possible from this data</li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Data Sharing and Disclosure
+          </h2>
+
+          <p>We do NOT:</p>
+          <ul className="list-disc pl-5 space-y-2 mt-2">
+            <li>Sell your personal information to third parties</li>
+            <li>Share your calculator data with anyone</li>
+            <li>Use your data for advertising purposes</li>
+            <li>Transfer data outside of necessary analytics services</li>
+          </ul>
+
+          <p className="mt-4">
+            We only share anonymous, aggregated usage statistics with:
+          </p>
+          <ul className="list-disc pl-5 space-y-2 mt-2">
+            <li>
+              <strong>Firebase Analytics</strong>: Google's analytics service
+              for app improvement (data is anonymized)
+            </li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Data Security
+          </h2>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>All personal calculator data remains on your device</li>
+            <li>
+              We use industry-standard security measures for any data
+              transmission
+            </li>
+            <li>Firebase Analytics data is encrypted in transit and at rest</li>
+            <li>We regularly review and update our security practices</li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Your Rights and Choices
+          </h2>
+
+          <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
+            Data Control
+          </h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Local Data</strong>: You can reset all stored calculator
+              data through the app's Settings
+            </li>
+            <li>
+              <strong>Analytics</strong>: You cannot opt out of anonymous usage
+              analytics, but this data contains no personal information
+            </li>
+          </ul>
+
+          <h3 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+            Data Retention
+          </h3>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              Local data is retained until you delete the app or reset settings
+            </li>
+            <li>
+              Analytics data is retained according to Firebase Analytics
+              policies (typically 26 months)
+            </li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Children's Privacy
+          </h2>
+          <p>
+            This app is designed for users 13 years and older. We do not
+            knowingly collect personal information from children under 13. If
+            you believe we have inadvertently collected such information, please
+            contact us immediately.
+          </p>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Third-Party Services
+          </h2>
+          <p>This app uses:</p>
+          <ul className="list-disc pl-5 space-y-2 mt-2">
+            <li>
+              <strong>Firebase Analytics</strong>: For anonymous usage tracking
+              (Google Privacy Policy applies)
+            </li>
+            <li>
+              <strong>iOS AppStorage</strong>: For local data persistence (Apple
+              Privacy Policy applies)
+            </li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Changes to This Privacy Policy
+          </h2>
+          <p>We may update this Privacy Policy periodically. When we do:</p>
+          <ul className="list-disc pl-5 space-y-2 mt-2">
+            <li>The "Last updated" date will be revised</li>
+            <li>Material changes will be communicated through app updates</li>
+            <li>Continued use of the app constitutes acceptance of changes</li>
+          </ul>
+
+          <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Australian Privacy Compliance
+          </h2>
+          <p>
+            This app complies with the Australian Privacy Principles (APPs)
+            under the Privacy Act 1988. As we collect minimal data and store
+            most information locally on your device, privacy risks are
+            minimized.
+          </p>
+
           <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Contact Information
           </h2>
