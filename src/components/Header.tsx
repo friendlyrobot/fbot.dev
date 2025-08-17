@@ -1,5 +1,12 @@
 import { useState, useRef, useMemo, useCallback, memo } from "react";
-import { Menu, X, ChevronDown, FileText, Edit3 } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  FileText,
+  Edit3,
+  Calculator,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { NeobrutalismBox } from "@/components/ui/neobrutalism-box";
 import { useScroll } from "@/hooks/use-scroll";
@@ -63,6 +70,14 @@ const Header = memo(() => {
         icon: Edit3,
         productLink: "/products/xwriter",
         privacyLink: "/products/xwriter/privacy-policy",
+      },
+      {
+        name: "Sparrow Property Calculator",
+        description:
+          "Comprehensive mortgage calculator for Australians with ROI and stamp duty calculations",
+        icon: Calculator,
+        productLink: "/products/sparrow",
+        privacyLink: "/products/sparrow/privacy-policy",
       },
     ],
     [],

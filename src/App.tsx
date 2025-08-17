@@ -19,8 +19,12 @@ const BloodhawkPrivacyPolicy = React.lazy(
 const XWriterPrivacyPolicy = React.lazy(
   () => import("./pages/XWriterPrivacyPolicy"),
 );
+const SparrowPrivacyPolicy = React.lazy(
+  () => import("./pages/SparrowPrivacyPolicy"),
+);
 const XWriter = React.lazy(() => import("./pages/XWriter"));
 const BloodHawk = React.lazy(() => import("./pages/BloodHawk"));
+const Sparrow = React.lazy(() => import("./pages/Sparrow"));
 
 // Loading component for suspense
 const LoadingSpinner = () => (
@@ -37,26 +41,31 @@ const App = () => (
       <Router>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/products/xwriter" element={<XWriter />} />
-          <Route path="/products/bloodhawk" element={<BloodHawk />} />
-          <Route
-            path="/products/xwriter/privacy-policy"
-            element={<XWriterPrivacyPolicy />}
-          />
-          <Route
-            path="/products/bloodhawk/privacy-policy"
-            element={<BloodhawkPrivacyPolicy />}
-          />
-          <Route
-            path="/bloodhawk/privacy-policy"
-            element={<BloodhawkPrivacyPolicy />}
-          />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/products/xwriter" element={<XWriter />} />
+            <Route path="/products/bloodhawk" element={<BloodHawk />} />
+            <Route path="/products/sparrow" element={<Sparrow />} />
+            <Route
+              path="/products/xwriter/privacy-policy"
+              element={<XWriterPrivacyPolicy />}
+            />
+            <Route
+              path="/products/bloodhawk/privacy-policy"
+              element={<BloodhawkPrivacyPolicy />}
+            />
+            <Route
+              path="/products/sparrow/privacy-policy"
+              element={<SparrowPrivacyPolicy />}
+            />
+            <Route
+              path="/bloodhawk/privacy-policy"
+              element={<BloodhawkPrivacyPolicy />}
+            />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </Router>
