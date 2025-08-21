@@ -12,19 +12,11 @@ const XWriter = () => {
             AI-powered writing assistant for X (formerly Twitter)
           </p>
 
-          <div className="mt-8">
-            <img 
-              src="/xwriter-preview.png" 
-              alt="XWriter Chrome Extension Interface" 
-              className="w-full max-w-3xl mx-auto rounded-lg border border-gray-200 dark:border-gray-700"
-            />
-          </div>
-
           <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             What is XWriter?
           </h2>
           <p>
-            XWriter is a Chrome extension that helps you write better posts and replies for X (formerly Twitter). 
+            XWriter is a Chrome extension that helps you write better posts and replies for X (formerly Twitter).
             Just enter a topic or draft, choose a writing style, and let AI help you create engaging content.
           </p>
 
@@ -57,7 +49,7 @@ const XWriter = () => {
           <p>
             Our AI follows a specific style guide to create natural-sounding posts:
           </p>
-          
+
           <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
             No emoji, ASCII instead
           </h3>
@@ -132,8 +124,8 @@ const XWriter = () => {
             Privacy
           </h2>
           <p>
-            XWriter respects your privacy. We don't store your content on our servers. All processing happens 
-            in real-time, and your data is not retained. Read our full 
+            XWriter respects your privacy. We don't store your content on our servers. All processing happens
+            in real-time, and your data is not retained. Read our full
             <a href="/xwriter/privacy-policy" className="text-blue-600 hover:underline dark:text-blue-400">
               Privacy Policy
             </a> for details.
@@ -143,12 +135,12 @@ const XWriter = () => {
             Get XWriter
           </h2>
           <p>
-            XWriter is available as a Chrome extension. Install it from the Chrome Web Store to start 
+            XWriter is available as a Chrome extension. Install it from the Chrome Web Store to start
             writing better posts today.
           </p>
           <div className="mt-6">
-            <a 
-              href="https://chrome.google.com/webstore/detail/xwriter" 
+            <a
+              href="https://chrome.google.com/webstore/detail/xwriter"
               className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Install Extension

@@ -24,14 +24,6 @@ const Sparrow = () => {
             </a>
           </div>
 
-          <div className="mt-8">
-            <img
-              src="/sparrow-preview.png"
-              alt="Sparrow Property Calculator Interface"
-              className="w-full max-w-3xl mx-auto rounded-lg border border-gray-200 dark:border-gray-700"
-            />
-          </div>
-
           <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Australia's Most Comprehensive Property Calculator
           </h2>
