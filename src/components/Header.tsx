@@ -78,6 +78,8 @@ const Header = memo(() => {
         icon: Calculator,
         productLink: "/products/sparrow",
         privacyLink: "/products/sparrow/privacy-policy",
+        downloadLink:
+          "https://apps.apple.com/app/sparrow-property-calculator/id6751142315",
       },
     ],
     [],
@@ -171,6 +173,16 @@ const Header = memo(() => {
                                   >
                                     Privacy Policy →
                                   </Link>
+                                  {product.downloadLink && (
+                                    <a
+                                      href={product.downloadLink}
+                                      className="text-sm text-brand-primary hover:underline font-medium"
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      Download App →
+                                    </a>
+                                  )}
                                 </div>
                               </div>
                             </div>
@@ -256,6 +268,16 @@ const Header = memo(() => {
                             >
                               Privacy Policy →
                             </Link>
+                            {product.downloadLink && (
+                              <a
+                                href={product.downloadLink}
+                                className="text-xs text-brand-primary hover:underline font-medium"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Download App →
+                              </a>
+                            )}
                           </div>
                         </div>{" "}
                       </div>
