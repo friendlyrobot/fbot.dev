@@ -25,6 +25,8 @@ const SparrowPrivacyPolicy = React.lazy(
 const XWriter = React.lazy(() => import("./pages/XWriter"));
 const BloodHawk = React.lazy(() => import("./pages/BloodHawk"));
 const Sparrow = React.lazy(() => import("./pages/Sparrow"));
+const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = React.lazy(() => import("./pages/TermsOfService"));
 
 // Loading component for suspense
 const LoadingSpinner = () => (
@@ -64,6 +66,8 @@ const App = () => (
               path="/bloodhawk/privacy-policy"
               element={<BloodhawkPrivacyPolicy />}
             />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
