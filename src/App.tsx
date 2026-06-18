@@ -27,6 +27,13 @@ const BloodHawk = React.lazy(() => import("./pages/BloodHawk"));
 const Sparrow = React.lazy(() => import("./pages/Sparrow"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = React.lazy(() => import("./pages/TermsOfService"));
+const BenderBot = React.lazy(() => import("./pages/BenderBot"));
+const BenderBotPrivacyPolicy = React.lazy(
+  () => import("./pages/BenderBotPrivacyPolicy"),
+);
+const BenderBotTermsOfService = React.lazy(
+  () => import("./pages/BenderBotTermsOfService"),
+);
 
 // Loading component for suspense
 const LoadingSpinner = () => (
@@ -65,6 +72,15 @@ const App = () => (
             <Route
               path="/bloodhawk/privacy-policy"
               element={<BloodhawkPrivacyPolicy />}
+            />
+            <Route path="/products/benderbot" element={<BenderBot />} />
+            <Route
+              path="/products/benderbot/privacy-policy"
+              element={<BenderBotPrivacyPolicy />}
+            />
+            <Route
+              path="/products/benderbot/terms-of-service"
+              element={<BenderBotTermsOfService />}
             />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />

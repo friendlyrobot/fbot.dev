@@ -6,6 +6,7 @@ import {
   FileText,
   Edit3,
   Calculator,
+  Bot,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NeobrutalismBox } from "@/components/ui/neobrutalism-box";
@@ -80,6 +81,15 @@ const Header = memo(() => {
         privacyLink: "/products/sparrow/privacy-policy",
         downloadLink:
           "https://apps.apple.com/app/sparrow-property-calculator/id6751142315",
+      },
+      {
+        name: "Bender Bot",
+        description:
+          "A friendly Discord bot for server moderation, fun commands, and utility features",
+        icon: Bot,
+        productLink: "/products/benderbot",
+        privacyLink: "/products/benderbot/privacy-policy",
+        termsOfServiceLink: "/products/benderbot/terms-of-service",
       },
     ],
     [],
@@ -183,6 +193,15 @@ const Header = memo(() => {
                                       Download App →
                                     </a>
                                   )}
+                                  {product.termsOfServiceLink && (
+                                    <Link
+                                      to={product.termsOfServiceLink}
+                                      className="text-sm text-brand-primary hover:underline font-medium"
+                                      onClick={closeProducts}
+                                    >
+                                      Terms of Service →
+                                    </Link>
+                                  )}
                                 </div>
                               </div>
                             </div>
@@ -277,6 +296,15 @@ const Header = memo(() => {
                               >
                                 Download App →
                               </a>
+                            )}
+                            {product.termsOfServiceLink && (
+                              <Link
+                                to={product.termsOfServiceLink}
+                                className="text-xs text-brand-primary hover:underline font-medium"
+                                onClick={closeMenu}
+                              >
+                                Terms of Service →
+                              </Link>
                             )}
                           </div>
                         </div>{" "}
